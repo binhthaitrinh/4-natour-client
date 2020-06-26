@@ -1,6 +1,7 @@
 /*//////////////////////// BUTTON///////////////////////////// */
 /* link sudo class, state of element */
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -11,6 +12,10 @@
     transition: all 0.2s ease-out;
     position: relative;
     font-size: $default-font-size;
+
+    // Change for the <Button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -25,7 +30,9 @@
   }
 
   /* state when we click the element */
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
